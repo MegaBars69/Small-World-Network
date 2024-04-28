@@ -57,13 +57,13 @@ def SmallWorldCheck(G, N, p):
     if(s>1):return True
     return False
 
-N = 13
-p = 0.8
-K = 6
+N = 500
+p = 0.3
+K = 200
 G = nx.watts_strogatz_graph(N, K, p)
-SmallWorldCheck(G,N, p)
+print('Lib Small world network:',SmallWorldCheck(G,N, p))
 G = SmallWorldCreat(N, K, p)
-SmallWorldCheck(G,N, p)
+print('Own Small world network:', SmallWorldCheck(G,N, p))
 
 pos = nx.circular_layout(G)
 
